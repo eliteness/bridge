@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bridge MCLB - Cross-chain Eliteness Network Token Bridge & Analytics</title>
+	<meta name="description" content="Turbocharge your DeFi experience by tapping into the Earnings Flywheel with Guru Network DAO! - Eliteness.Network">
+	<meta name="keywords" content="Guru Network, Decentralized Finance, Fantom, ELITE, 1337, defi, farming, FTM1337">
+    <link rel="shortcut icon" href="https://ftm.guru/icons/eliteness.png">
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="assets/dropdown.css"/>
+</head>
+<body>
+
+    <div id="note" class="overlay">
+        <div class="popup">
+            <a class="close" href="#">&times;</a>
+            <div class="content" id="content1">
+                Welcome!
+            </div>
+        </div>
+    </div>
+
+    <div class="topnav">
+        <div class="topnav-left">
+            <a href="https://eliteness.network/elma">
+                <img src="https://ftm.guru/icons/eliteness.png" alt="Logo" height="48px">
+            </a>
+            <a href="https://eliteness.network">ELITENESS<br>NETWORK</a>
+        </div>
+        <div class="topnav-right">
+            <p id="p_cw">
+                <span id="cw" onclick="cw()"><button id="cw_og" class="submit equal-gradient">Connect wallet</button></span>
+            </p>
+        </div>
+    </div>
+
+    <div id="main-area">
+        <div class="headline">
+            <div class="headline-keyword">Eliteness Bridge</div>
+			<div>Bridge any token built upon the ElitenessOFT Standard!</div>
+			<br>
+			<div style="display:grid;grid-template-columns:auto auto; display:none">
+				<img src="back.svg" style="width: 32px;">
+				<div id="headline-props" style="text-align: right;font-family: bold;">ELMA Pool</div>
+			</div>
+
+
+  			<div class="divdropdown">
+	  			<input class="dropdown" type="checkbox" id="dropdown" name="dropdown"/>
+	  			<label class="for-dropdown" for="dropdown">Select a Token<span class="uil uil-arrow-down"></span></label>
+
+  				<div class="section-dropdown">
+  					<div class="dropdown-lvl-1">
+  						<a href="./elite">ELITE<span class="uil uil-arrow-right"></span></a>
+					</div>
+
+					<!--<div class="dropdown-lvl-1">
+	  					<input class="dropdown-sub" type="checkbox" id="dropdown-sub" name="dropdown-sub"/>
+		  				<a>
+		  					<label class="for-dropdown-sub" for="dropdown-sub" style="width: 100%;">MCLB</label>
+			  				<span class="uil uil-arrow-down"></span>
+		  				</a>
+	  					<div class="section-dropdown-sub">
+	  						<a href="./mclb">New MCLB<span class="uil uil-arrow-right"></span></a>
+	  						<a href="#">Old MCLB<span class="uil uil-arrow-right"></span></a>
+	  					</div>
+					</div>-->
+
+					<div class="dropdown-lvl-1">
+  						<a href="./mclb">MCLB<span class="uil uil-arrow-right"></span></a>
+					</div>
+
+					<div class="dropdown-lvl-1">
+  						<a href="./bol">BOL<span class="uil uil-arrow-right"></span></a>
+					</div>
+
+					<div class="dropdown-lvl-1">
+  						<a href="./fiery">FIERY<span class="uil uil-arrow-right"></span></a>
+					</div>
+
+					<div class="dropdown-lvl-1">
+  						<a href="./fmulti">fMULTI<span class="uil uil-arrow-right"></span></a>
+					</div>
+
+  				</div>
+  			</div>
+
+
+        </div>
+        <div class="page-heading">
+            <img src="https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579.png">
+            MCLB token selected
+        </div>
+
+        <div class="topstats">
+            <div class="topstat">
+                <div id="topstats-totsup"><b>≢</b>... , ...</div>
+                <div>Total Supply of MCLB </div>
+            </div>
+            <div class="topstat">
+                <div id="topstats-chaincount">? Chains</div>
+                <div>Connected Networks</div>
+            </div>
+            <div class="topstat">
+                <div id="topstats-fdv">$-.--</div>
+                <div>Market Capitalization</div>
+            </div>
+        </div>
+
+		<br><br>
+
+        <!-- Tab Navigation -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Supplies')" id="tablinks_Supplies">Supplies</button>
+            <button class="tablinks" onclick="openTab(event, 'Portfolio')" id="tablinks_Portfolio">Portfolio</button>
+            <button class="tablinks" onclick="openTab(event, 'Bridge')" id="tablinks_Bridge">Bridge</button>
+            <button class="tablinks" onclick="openTab(event, 'Settings')" id="tablinks_Settings">Settings</button>
+        </div>
+
+
+        <!-- Tab content -->
+        <div id="Supplies" class="tabcontent">
+            <div class="c2a c2a90" align="center" style="margin:auto">
+                <h2>MCLB Supply Distribution</h2>
+                <br>
+        		<div class="c2a90-table" id="supplies-table" align="center" style="display:grid;">
+        			<div style="font-family:italic">Counting ≢ across 10 chains, please wait ...</div>
+        		</div>
+            </div>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Portfolio" class="tabcontent">
+            <div class="c2a c2a90" align="center" style="margin:auto">
+				<h2>Your MCLB Portfolio</h2>
+                <br>
+        		<div class="c2a90-table" id="portfolio-table" align="center" style="display:grid;">
+        			<div style="font-family:italic">Loading RPC settings across 10 chains, please wait ...</div>
+        		</div>
+            </div>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Bridge" class="tabcontent">
+            <div class="c2a c2a90" align="center" style="margin:auto">
+				<h2>Bridge MCLB Across Chains</h2>
+                <div id="bridge-curnet-bal"></div>
+                <br>
+        		<div class="c2a90-table" id="bridge-table" align="center" style="display:grid;">
+        			<div style="font-family:italic">Counting your ≢ balances across 10 chains, please wait ...</div>
+        		</div>
+            </div>
+        </div>
+
+        <!-- Tab content -->
+        <div id="Settings" class="tabcontent">
+            <div class="c2a c2a90" align="center" style="margin:auto">
+				<h2>Manage Dapp Settings</h2>
+				<div style="margin:auto;font-family: light_italic;font-size: 0.9em;">
+					Here you can edit the RPC providers used for fetching public data. Sometime some public RPC providers may face downtime during periods of heavy usage. Here you can provide your own curstom RPC URL for such chains. These settings are shared in your browser session cache locally on your device. A hard refresh or closing the browser will reset them back to default.
+				</div>
+                <br>
+                <br>
+        		<div class="c2a90-table" id="settings-table" align="center" style="display:grid;">
+        			<div style="font-family:italic">Counting your ≢ balances across 10 chains, please wait ...</div>
+        		</div>
+            </div>
+        </div>
+
+
+
+
+        <footer>
+        	<h2>Powered by Guru Network</h2>
+        	<div class="social">
+            	<a target="_blank" href="https://discord.gg/QpyfMarNrV"><img src="https://ftm.guru/icons/discord.svg" alt="Discord"></a>
+            	<a target="_blank" href="https://twitter.com/FTM1337"><img src="https://ftm.guru/icons/twitter.svg" alt="Twitter"></a>
+            	<a target="_blank" href="https://dune.com/eliteness"><img src="https://ftm.guru/icons/dune.svg" alt="Dune"></a>
+            	<a target="_blank" href="https://defillama.com/protocol/guru-network-dao"><img src="https://ftm.guru/icons/defillama.svg" alt="Defillama"></a>
+            	<a target="_blank" href="https://coinmarketcap.com/currencies/elite-1337"><img src="https://ftm.guru/icons/cmc.svg" alt="CoinMarketCap"></a>
+            	<a target="_blank" href="https://ftm.guru/docs"><img src="https://ftm.guru/icons/docs.svg" alt="Docs"></a>
+        	</div>
+		</footer>
+
+    </div>
+
+    <!-- Ignore Below Block : Dev Logs. DONT REMOVE! -->
+    <div style="display:none">
+        <span id="cw_m"></span>
+        <div id="connect">
+            Please connect your web3 wallet.
+            <button onclick="cw()" id="btn-connect">Connect</button>
+        </div>
+        <div id="switch">
+            <b id="btn-switch" onclick="cw()">
+                <span id="cw"></span>
+            </b>
+            <div>Balance: <b id="usb-mtv">?</b> USDC</div>
+            <span>Wallet at Fantom Opera. <a href="index.html" style="color:aqua;">Change?</a></span>
+        </div>
+
+		<div id="theme-light-dark" style="display:none">
+		<input class="dark-light" type="checkbox" id="dark-light" name="dark-light"/>
+  			<label for="dark-light"></label>
+  			<div class="light-back"></div>
+		</div>
+
+    </div>
+    <!-- Ignore Above Block : Dev Logs. DONT REMOVE! -->
+
+    <script src="https://ftm.guru/ethers-5.2.umd.min.js"></script>
+    <script src="index.js"></script>
+    <script>
+	const SAFE_ADDR = "0x0000000000000000000000000000000000001234";
+    LOGOS = "https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/";
+
+	LZE_id = {
+		'fantom-testnet' : 10112,
+		'bsc-testnet' : 10102,
+
+		"arbitrum-mainnet": 110,
+		"bsc-mainnet": 102,
+		"base-mainnet": 184,
+		"blast-mainnet": 243,
+		"sonic-mainnet": 332,
+		"fantom-mainnet": 112,
+		"avalanche-mainnet": 106,
+  		"polygon-mainnet": 109,
+		"optimism-mainnet": 111,
+		"ethereum-mainnet": 101,
+		"berachain-mainnet": 362,
+		"linea-mainnet": 183,
+		"mantle-mainnet": 181
+	}
+
+
+	TOKEN_LOGO="https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579.png";
+
+	TOKEN_PRICE_CHAIN="sonic-mainnet"
+	TOKEN_PRICE_TVLGURU="0x2696f94f11dfF0d77875E2652FCdB537274B9CE7"
+	TOKEN_PRICE_LP="0xDE87419F0774eef80b0EbD134Ff54ece0d4927C9"
+
+     CHAINS = {
+     	"sonic-mainnet": {
+            url: "https://rpc.soniclabs.com/",
+            chainId: 146,
+            chainLogo: "https://ftm.guru/icons/sonic.png",
+            gasName: "S",
+            explorer: "https://sonicscan.org",
+            lzid: 332,
+        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+        },
+        "blast-mainnet": {
+            url: "https://rpc.ankr.com/blast",
+            chainId: 81457,
+            chainLogo: "https://ftm.guru/icons/blast.svg",
+            gasName: "ETH",
+            explorer: "https://routescan.io",
+            lzid: 243,
+        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+        },
+        "bsc-mainnet": {
+            url: "https://binance.llamarpc.com",//"https://rpc.ankr.com/bsc",
+            chainId: 56,
+            chainLogo: "https://ftm.guru/icons/bnb.svg",
+            gasName: "BNB",
+            explorer: "https://bscscan.com",
+            lzid: 102,
+        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+        },
+		"fantom-mainnet":{
+			url: "https://rpcapi.fantom.network",//"https://rpc.ankr.com/fantom",
+            chainId: 250,
+            chainLogo: "https://ftm.guru/icons/ftm.svg",
+            gasName: "FTM",
+            explorer: "https://ftmscan.com",
+            lzid: 112,
+        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+		},
+		"base-mainnet":{
+			url: "https://developer-access-mainnet.base.org",
+            chainId: 8453,
+            chainLogo: "https://ftm.guru/icons/base.svg",
+            gasName: "ETH",
+            explorer: "https://basescan.org",
+            lzid: 184,
+        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+		},
+	}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!doctype html>
+	<meta charset="UTF-8">
+	<head>
+		<meta name="description" content="Guru Network : ELITE - eliteness.network">
+		<meta name="keywords" content="Guru, Guru Network, eliteness, Fantom Opera, FTM, Decentralized Finance, ELITE, 1337, defi, farming, FTM1337">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Guru Network : ELITE - eliteness.network</title>
+		<link rel="shortcut icon" href="https://ftm.guru/icons/eliteness.png" />
+		<style>	</style>
+		<link rel="manifest" href="manifest.json"/>
+		<!--
+		<link rel="stylesheet" href="index.css">
+		<script src="index.js"></script>
+		<script src="projects.js"></script>
+    	<script src="https://ftm.guru/ethers-5.2.umd.min.js"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+    	-->
+	</head>
+	<body>
+
+		<div id="note" class="overlay">
+			<div class="popup">
+				<a class="close" href="#">&times;</a>
+				<div class="content" id="content1">
+					w31c0m3 fren!<br>trade well :)
+				</div>
+			</div>
+		</div>
+
+		<div class="topnav">
+			<div align="left">
+				<a href="https://eliteness.network/e3">
+					<img src="https://ftm.guru/icons/eliteness.png" style="vertical-align: middle;" height="32px">
+				</a>
+				<a href="https://eliteness.network">
+					eliteness.network
+				</a>
+			</div>
+			<div align="right"style="display:">
+				<p><i><a target="_blank" href="https://discord.gg/QpyfMarNrV">Join us on Discord!</a></i></p>
+				<p id="p_cw" style="display:none"><span id="cw" onclick="cw()">Hello 👋 <span id="cw_og">Connect wallet!</span></p>
+			</div>
+			<div align="left" class="topnav-mkts" id="topnav-mkts">
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+        <div id="chart1" style="display:none;width: 100%;height:100%;min-height: 480px; margin:50px auto">
+        </div>
+
+
+
+
+
+
+
+
+
+
+		<h2 align="center" style="font-family:bold">A Public Directory of <span style="font-family:regular;color:#fff;text-shadow: 0px 0px 2px aqua;">Guru Network</span> DApps!</h2>
+
+		<br><br><br><br>
+
+		<div id="mainstage" style="margin:auto 10%">
+
+		</div>
+
+
+
+
+
+
+
+
+
+		<br><br><br><br>
+		<br><br><br><br>
+		<div style="font-size:4em" align="center"><img src="https://ftm.guru/icons/1f9be.svg" height="64px">, <img src="https://ftm.guru/icons/1f680.svg" height="64px"></div>
+		<h2 align="center">Powered by Guru Network</h2>
+		<div class="social">
+			<a target="_blank" href="https://discord.gg/QpyfMarNrV"><img src="https://ftm.guru/icons/discord.svg"></a>
+			<a target="_blank" href="https://twitter.com/FTM1337"><img src="https://ftm.guru/icons/twitter.svg"></a>
+			<a target="_blank" href="https://dune.com/eliteness"><img src="https://ftm.guru/icons/dune.svg"></a>
+			<a target="_blank" href="https://defillama.com/protocol/guru-network-dao"><img src="https://ftm.guru/icons/defillama.svg"></a>
+			<a target="_blank" href="https://coinmarketcap.com/currencies/elite-1337"><img src="https://ftm.guru/icons/cmc.svg"style="background:#444;border-radius:100px"></a>
+			<a target="_blank" href="https://ftm.guru/docs"><img src="https://ftm.guru/icons/docs.svg"></a>
+			<a target="_blank" href="https://www.coingecko.com/en/coins/ftm-guru"><img src="https://ftm.guru/icons/gecko.svg"></a>
+		</div>
+		<br><br>
+
+	</body>
+
+	<script>
+	function $(_) {return document.getElementById(_);}
+
+	const DATA = {
+  		"categories": [
+    		{
+      			"title": "Eliteness.Network : $ELITE",
+      			"tiles": [
+        			{
+          			"name": "Bridge $ELITE across 12 chains",
+          			"description": "$ELITE is the native token of Eliteness.Network!<br><br>🔗 eliteness.network",
+          			"url": "https://eliteness.network/bridge/elite",
+          			"image": "https://ftm.guru/icons/eliteness.png",
+          			"background": "linear-gradient(0deg,#000,#777)",
+          			"subicons" : ["ftm", "base", "arb1","sonic", "bsc", "blast", "bera", "eth", "op", "avax", "pol", "linea"],
+        			},
+      			]
+    		},
+    		{
+      			"title": "Millennium Club : $MCLB",
+      			"tiles": [
+        			{
+          			"name": "Bridge $MCLB across 5 chains",
+          			"description": "MCLB is the native token of Millennium Club!<br><br>🔗 mclb.org",
+          			"url": "https://eliteness.network/bridge/elite",
+          			"image": "https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579.png",
+          			"background": "linear-gradient(200deg, navy,#159)",
+          			"subicons" : ["ftm", "base", "sonic", "bsc", "blast"],
+        			},
+      			]
+    		},
+    		{
+      			"title": "Blackhole Finance : $BOL",
+      			"tiles": [
+        			{
+          			"name": "Bridge $BOL across 5 chains",
+          			"description": "BOL is the native token of Blackhole Finance!<br><br>🔗 mclb.org",
+          			"url": "https://eliteness.network/bridge/elite",
+          			"image": "https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x38628cb4cc74cbdfb6ddd877b17c1f60fcae7c2c.png",
+          			"background": "linear-gradient(225deg , #f007, black)",
+          			"subicons" : ["ftm", "base", "sonic", "bsc", "blast"],
+        			},
+      			]
+    		},
+    		{
+      			"title": "Fiery Token : $FIERY",
+      			"tiles": [
+        			{
+          			"name": "Bridge $FIERY across 5 chains",
+          			"description": "FIERY is a memecoin dedicated to OGs of Fantom!<br><br>🔗 Search $FIERY on Twitter",
+          			"url": "https://eliteness.network/bridge/fiery",
+          			"image": "https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0xf97d438bc03ad0f75b83ce5714c9619880b305bc.png",
+          			"background": "linear-gradient(260deg, #be7b00,#f007)",
+          			"subicons" : ["ftm", "base", "sonic", "bsc", "blast"],
+        			},
+      			]
+    		},
+    		{
+      			"title": "fMulti Token : $fMULTI",
+      			"tiles": [
+        			{
+          			"name": "Bridge $BOL across 5 chains",
+          			"description": "fMulti was a memecoin born as a satire on the unfortunate collapse of Multichain (Anyswap) Protocol!<br><br>🔗 Search $fMULTI on Twitter",
+          			"url": "https://eliteness.network/bridge/fmulti",
+          			"image": "https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x39838b880ba948c49aab7253f61ce1e00c30c014.png",
+          			"background": "linear-gradient(224deg, #579, blue)",
+          			"subicons" : ["ftm", "base", "sonic", "bsc", "blast"],
+        			},
+      			]
+    		},
+  		]
+	}
+
+
+
+
+	const ICONS = {
+  	//[
+		"eth" : "https://ftm.guru/icons/eth.svg",
+		"bsc" : "https://ftm.guru/icons/bnb.svg",
+		"arb1" : "https://ftm.guru/icons/arb1.svg",
+		"ftm" : "https://ftm.guru/icons/ftm.svg",
+		"ech" : "https://ftm.guru/icons/ech.svg",
+		"kava" : "https://ftm.guru/icons/kava.svg",
+		"mtv" : "https://ftm.guru/icons/mtv.png",
+		"kcc" : "https://ftm.guru/icons/kcs.svg",
+		"sonic" : "https://ftm.guru/icons/sonic.png",
+		"pol" : "https://ftm.guru/icons/matic.svg",
+		"avax" : "https://ftm.guru/icons/avax.svg",
+		"base" : "https://ftm.guru/icons/base.svg",
+		"metis" : "https://ftm.guru/icons/metis.svg",
+		"blast" : "https://ftm.guru/icons/blast.svg",
+		"bera" : "https://ftm.guru/icons/bera.svg",
+		"op" : "https://ftm.guru/icons/optimism.svg",
+		"linea" : "https://ftm.guru/icons/linea.png"
+  	//]
+	}
+
+
+
+	document.addEventListener('DOMContentLoaded', function() {
+    	dexstats();
+    	paintTiles(DATA);
+	});
+
+	async function dexstats() {
+		return;
+	}
+
+	function paintTiles(data) {
+  	const container = document.createElement('div');
+
+  	data.categories.forEach(category => {
+    	const categoryTitle = document.createElement('h2');
+    	categoryTitle.className = 'cat-h2';
+    	categoryTitle.textContent = category.title;
+    	container.appendChild(categoryTitle);
+
+    	const tilesWrapper = document.createElement('div');
+    	tilesWrapper.className = 'wrapper-tiles';
+
+    	category.tiles.forEach(tile => {
+      	const tileDiv = document.createElement('div');
+      	tileDiv.className = 'wrapper-tile';
+
+      	const tileColor = (tile.color) ? tile.color : "white";
+      	tileDiv.style.background = tile.background;
+      	tileDiv.style.color = tileColor;
+
+      	if(tile.url) {
+        	tileDiv.onclick = () => window.open(tile.url);
+      	}
+
+      	const tileTitle = document.createElement('div');
+      	tileTitle.className = 'wrapper-tile-title';
+
+
+      	if(tile.image) {
+        	const tileImage = document.createElement('img');
+        	tileImage.src = tile.image;
+        	//tileImage.alt = tile.name;
+        	tileTitle.appendChild(tileImage);
+      	}
+
+      	const titleText = document.createElement('div');
+      	titleText.innerHTML = tile.name ? `<div class="subhead-big" style="color:${tileColor};">${tile.name}</div>` : "";
+
+
+	  	const chainsWrapper = document.createElement('div');
+      	if(tile.subicons) {
+			chainsWrapper.className = 'subhead-small wrapper-chains';
+        	tile.subicons.forEach(i => {
+          	const chainImg = document.createElement('img');
+          	chainImg.src = ICONS[i];
+          	chainsWrapper.appendChild(chainImg);
+        	});
+        	titleText.appendChild(chainsWrapper);
+      	}
+
+      	tileTitle.appendChild(titleText);
+
+
+      	tileDiv.appendChild(tileTitle);
+
+
+      	const tileDesc = document.createElement('div');
+      	tileDesc.className = 'wrapper-desc';
+      	tileDesc.style.color = tileColor;
+      	tileDesc.innerHTML = tile.description ? tile.description : "" ;
+
+      	tileDiv.appendChild(tileDesc);
+      	tilesWrapper.appendChild(tileDiv);
+    	});
+
+    	container.appendChild(tilesWrapper);
+  	});
+
+  	document.getElementById('mainstage').appendChild(container);
+	}
+	</script>
+
+	<style>
+
+
+
+		/*
+		@font-face{font-family:bold;src: url(https://ftm.guru/font/bold.ttf);}
+		@font-face{ font-family:italic;src: url(https://ftm.guru/font/italic.ttf);}
+		@font-face{ font-family:light_italic;src: url(https://ftm.guru/font/light_italic.ttf);}
+		@font-face{ font-family:regular;src: url(https://ftm.guru/font/regular.ttf);}
+		@font-face{ font-family:regular_italic;src: url(https://ftm.guru/font/regular_italic.ttf);}
+
+		@font-face{ font-family:light;src: url(https://ftm.guru/font/light.ttf);}
+		@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+		@font-face{ font-family:light;		src: url(https://eliteness.network/fonts/Roboto/Roboto-Light.ttf);}
+		@font-face{ font-family:regular;	src: url(https://eliteness.network/fonts/Roboto/Roboto-Regular.ttf);}
+		@font-face{ font-family:bold;		src: url(https://eliteness.network/fonts/Roboto/Roboto-Bold.ttf);}
+		*/
+		@font-face{ font-family:light;		src: url(https://eliteness.network/fonts/neue-haas-grotesk/NeueHaasDisplayLight.ttf);}
+		@font-face{ font-family:regular;	src: url(https://eliteness.network/fonts/neue-haas-grotesk/NeueHaasDisplayRoman.ttf);}
+		@font-face{ font-family:bold;		src: url(https://eliteness.network/fonts/neue-haas-grotesk/NeueHaasDisplayBold.ttf);}
+
+		html{
+			background-size: 100%;
+			background-attachment: fixed;
+			color:#fff;
+			/*text-shadow: 2px 2px 2px #000;*/
+			background-image: linear-gradient( 45deg, black, #0007);
+			background-color:#01011d;
+			background-image:radial-gradient(at 70% 5%,rgba(6,101,216,.16) 0,transparent 50%);
+			background-color:#01011d;
+			background-image:radial-gradient(at 30% 5%,rgba(16,201,255,.36) 0,transparent 50%);
+			background-attachment: fixed;
+			background-position: cover;
+		}
+		body {
+			margin:0;
+		}
+		* {
+			scroll-behavior: smooth !important;
+			font-family: regular;
+			transition: background-size 0.5s;
+			scrollbar-color: #02f	 #001337;
+			scrollbar-width: thin;
+			word-spacing: 0.05em;
+		}
+
+		.topnav {
+			display:grid;
+			grid-template-columns:auto;
+			margin:0;
+			padding:2vh 1vw;
+			position: sticky;
+			top: 0;
+			background:linear-gradient(to bottom, rgba(0,0,16,0.8), rgba(0,19,55,0.8));
+			z-index:0;
+		}
+		.topnav div:first-child {
+			font-size: 2em;
+			font-family: light;
+		}
+		.topnav div:nth-child(2) p {
+			text-align: left;
+			margin:auto 1vw;
+		}
+		.topnav a {
+			font-family: light;
+			text-decoration: none;
+			color: white;
+		}
+
+		@media(min-width:641px) {
+			.topnav {
+				display:grid;
+				grid-template-columns:auto max-content;
+			}
+
+			.amount-sold input, .amount-bought input {
+				font-size: 2em;
+			}
+
+			.amount-sold b, .amount-bought b {
+				font-family: regular;
+			}
+
+			.mechanism .input-amount img.bigthumb {
+				width: 100px;
+				height: 100px;
+			}
+			.subnav {
+				grid-template-columns:auto auto max-content auto auto;
+			}
+			.subnav-link {
+				margin: -2px 2px;
+			}
+		}
+		b {
+  		font-family: bold;
+		}
+		a {
+  		text-decoration-line: none;
+  		color: initial;
+		}
+
+		h1 {
+  		font-size:1em;
+		}
+		@media(min-width:641px) {
+  		h1 {
+    		font-size:1em;
+  		}
+		}
+		.social {
+			text-align: center;
+		}
+		.social a img {
+  		height: 24px;
+  		margin:4px 4px 4px 0;
+		}
+
+		.cat-h2 {
+			font-size: 2em;
+			margin-left: 10px;
+			margin-top: 20px;
+			font-family: light;
+		}
+
+		/************* NOTIFS ****************/
+		.overlay {
+  		position: fixed;
+  		top: 0;
+  		bottom: 0;
+  		left: 0;
+  		right: 0;
+  		background: rgba(0, 0, 0, 0.7);
+  		transition: opacity 500ms;
+  		visibility: hidden;
+  		opacity: 0;
+  		overflow-y:  auto;
+		}
+		.overlay:target {
+  		visibility: visible;
+  		opacity: 1;
+		}
+
+		.popup {
+  		margin: 70px auto;
+  		padding: 20px;
+  		background: #192133;
+  		color: #fff;
+  		border-radius: 20px;
+  		width: 30%;
+  		position: relative;
+  		transition: all 5s ease-in-out;
+		}
+
+		.popup .close {
+  		position: absolute;
+  		top: 10px;
+  		right: 20px;
+  		transition: all 200ms;
+  		font-size: 30px;
+  		font-weight: bold;
+  		text-decoration: none;
+  		color: #789;
+		}
+		.popup .close:hover {
+  		color: #fff;
+  		cursor:  context-menu
+		}
+		.popup .content {
+  		max-height: 30%;
+  		overflow: auto;
+		}
+		@media screen and (max-width: 700px){
+  		.box{
+    		width: 70%;
+  		}
+  		.popup{
+    		width: 70%;
+  		}
+		}
+
+
+
+		/**************** TILES ********************/
+
+		.subhead-small {
+  		font-size:1em;
+  		color:#999;
+		}
+		.subhead-big {
+  		font-size:1em;
+  		color:#fff;
+		}
+		.wrapper-chains img {
+  		height:20px !important;
+  		width:20px !important;
+  		margin-right: 2px;
+		}
+		.wrapper-tiles {
+  		display: grid;
+  		grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+		}
+
+		.wrapper-tile * {
+			word-break: break-word;
+			margin:auto
+		}
+		.wrapper-tile:hover{
+  		box-shadow: 0px 0px 5px 5px #fff;
+  		cursor:pointer;
+  		position: relative;
+  		top:10px
+		}
+		.wrapper-tile {
+  		background: rgba(0,0,0,0.2);
+  		margin: 5px;
+  		padding: 10px;
+  		text-align: left;
+  		border-radius: 10px;
+		}
+		.wrapper-tile img {
+  		vertical-align: bottom;
+  		height: 38px;
+		}
+		.wrapper-tile-title {
+  		display: grid;
+  		grid-template-columns: 50px auto;
+		}
+		.wrapper-tile-title div {
+  		margin-left: 0px;
+  		font-family: bold;
+		}
+		.wrapper-tile-title-noimg {
+  		display: grid;
+  		grid-template-columns: auto;
+		}
+
+		.wrapper-desc {
+  		font-size:1em;
+  		display:;
+  		font-family: regular;
+  		margin-top: 15px;
+		}
+	</style>
+</html>
