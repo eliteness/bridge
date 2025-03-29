@@ -440,11 +440,12 @@ async function dexstats() {
 	}
 	catch(e) {
 		console.log("ERROR: Supplies Table", e);
+		try{$("supplies-loader").remove()}catch(e){}
 		$("supplies-table").innerHTML += `
 			<div id="supplies-loader" style="font-family:italic">
 				<br><br>
 				An error occured while grabbing all supply data.
-				<br><button class="bridge-btn-submit" onclick='notice(${e})'>View Error</button>
+				<br><button class="bridge-btn-submit" onclick='notice(${e.toString()})'>View Error</button>
 				<br><br>
 				We will try again after 30 secs to again count ${TOKEN_NAME} total supply ${CL.length} chains, please wait ...
 				<br><button class="bridge-btn-submit" onclick='dexstat()'>Re-fetch Supplies Now</button>
@@ -513,11 +514,12 @@ async function gubs() {
 	}
 	catch(e) {
 		console.log("ERROR: Portfolio Table", e);
+		try{$("portfolio-loader").remove()}catch(e){}
 		$("portfolio-table").innerHTML += `
 			<div id="supplies-loader" style="font-family:italic">
 				<br><br>
 				An error occured while grabbing all portfolio data.
-				<br><button class="bridge-btn-submit" onclick='notice(${e})'>View Error</button>
+				<br><button class="bridge-btn-submit" onclick='notice(${e.toString()})'>View Error</button>
 				<br><br>
 				We will try again after 30 secs to again count your ${TOKEN_NAME} balances across ${CL.length} chains, please wait ...
 				<br><button class="bridge-btn-submit" onclick='gubs()'>Re-fetch Balances Now</button>
