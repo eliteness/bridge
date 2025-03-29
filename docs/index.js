@@ -472,7 +472,7 @@ async function arf(){
 			catch(e) { console.log('hmm..'); }
 			c++;
 		},
-		16_000
+		32_000
 	);
 }
 async function gubs() {
@@ -552,7 +552,8 @@ async function gubs() {
 	$("bridge-curnet-bal").innerHTML = `
 		<img class="curchain-icon" src="${ CHAINS[CL[_curnet.clindex]].chainLogo }"> Connected to ${_curnet.name}.
 		<br>(Switch chains in wallet)
-		<h3>${tokenCurrencySymbol()}${ fornum6(_userbals[_curnet.clindex] ,0) } ${TOKEN_NAME} in Wallet</h3>
+		<h1>${tokenCurrencySymbol()}${ fornum6(_userbals[_curnet.clindex] ,0) }</h1>
+		(${TOKEN_NAME} in ${_curnet.name} Wallet)
 	`;
 
 	paintStaticBridgeTableHeads()
