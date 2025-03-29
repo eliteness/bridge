@@ -355,9 +355,9 @@ function paintStaticBridgeTableHeads(){
 	$("bridge-table").innerHTML = `
 		<div class="c2a90-row">
 			<div onclick="sortit(0, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">					<br><span class="c2a90-row-byline"></span></div>
-			<div onclick="sortit(1, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">Select Chain		<br><span class="c2a90-row-byline">to send ≢ to</span></div>
+			<div onclick="sortit(1, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">Select Chain		<br><span class="c2a90-row-byline">to send ${tokenCurrencySymbol()} to</span></div>
 			<div onclick="sortit(2, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">Gas & LZ Cost		<br><span class="c2a90-row-byline">On-chain Supply</span></div>
-			<div onclick="sortit(3, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">Amount of ≢ to Bridge		<br><span class="c2a90-row-byline">Input your amount<span></div>
+			<div onclick="sortit(3, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">${tokenCurrencySymbol()} Amount to Bridge		<br><span class="c2a90-row-byline">Input your amount<span></div>
 			<div onclick="sortit(4, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">Actions<br><span class="c2a90-row-byline">Start Transaction</span></div>
 		</div>
 		<div id="bridge-loader" style="font-family:italic"><br><br>Counting your ${TOKEN_NAME} balances across ${CL.length} chains, please wait for your wallet connection...</div>
@@ -706,17 +706,17 @@ async function bridge_submit(_toclid) {
 		<h3>${ fornum6(Number(_gasreq[0])/1e18, 6) } ${CHAINS[CL[_curnet.clindex]].gasName}</h3>
 		Gas fee paid to LayerZero Decentralized Validator Network
 		<br><br>
-		<h3>≢${ fornum6(Number(_bridgefee)/1e18,0) }</h3>
+		<h3>${ fornum6(Number(_bridgefee)/1e18,0) } ${TOKEN_NAME}</h3>
 		Bridge Fees in ${TOKEN_NAME} paid to ${TOKEN_NAME}'s Team
 		<br><br>
 		<h3>Amount of ${TOKEN_NAME} to Bridge</h3>
 		${ Number(_oamt/(10n**18n)) } ${TOKEN_NAME}
 		<br><br>
 		<h3>From <img src="${ CHAINS[CL[_curnet.clindex]].chainLogo }"> ${CL[_curnet.clindex]}</h3>
-		<i>Current Bal: ${ _userbals[_curnet.clindex] }</i> ${TOKEN_NAME}
+		<i>Current Bal: ${ _userbals[_curnet.clindex] } ${TOKEN_NAME}</i>
 		<br><br>
 		<h3>To <img src="${ CHAINS[CL[_toclid]].chainLogo }"> ${CL[_toclid]}</h3>
-		<i>Current Bal: ${ _userbals[_toclid] }</i> ${TOKEN_NAME}
+		<i>Current Bal: ${ _userbals[_toclid] } ${TOKEN_NAME}</i>
 		<br><br>
 		<h3>Recipient Address</h3>
 		${ window.ethereum.selectedAddress }
@@ -773,10 +773,10 @@ async function bridge_submit(_toclid) {
 		${ Number(_oamt/(10n**18n)) } ${TOKEN_NAME}
 		<br><br>
 		<h3>From <img src="${ CHAINS[CL[_curnet.clindex]].chainLogo }"> ${CL[_curnet.clindex]}</h3>
-		<i>Current Bal: ${ _userbals[_curnet.clindex] }</i> ${TOKEN_NAME}
+		<i>Current Bal: ${ _userbals[_curnet.clindex] } ${TOKEN_NAME}</i>
 		<br><br>
 		<h3>To <img src="${ CHAINS[CL[_toclid]].chainLogo }"> ${CL[_toclid]}</h3>
-		<i>Current Bal: ${ _userbals[_toclid] }</i> ${TOKEN_NAME}
+		<i>Current Bal: ${ _userbals[_toclid] } ${TOKEN_NAME}</i>
 		<br><br>
 		<h3>Recipient Address</h3>
 		${ window.ethereum.selectedAddress }
