@@ -310,7 +310,12 @@ LPABI = ["function balanceOf(address) public view returns(uint)","function metad
 MULTICALLPARAMS = { address: "0xcA11bde05977b3631167028862bE2a173976CA11", abi : [{"inputs":[{"components":[{"internalType":"address","name":"target","type":"address"},{"internalType":"bytes","name":"callData","type":"bytes"}],"internalType":"struct Multicall3.Call[]","name":"calls","type":"tuple[]"}],"name":"aggregate","outputs":[{"internalType":"uint256","name":"blockNumber","type":"uint256"},{"internalType":"bytes[]","name":"returnData","type":"bytes[]"}],"stateMutability":"payable","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"target","type":"address"},{"internalType":"bool","name":"allowFailure","type":"bool"},{"internalType":"bytes","name":"callData","type":"bytes"}],"internalType":"struct Multicall3.Call3[]","name":"calls","type":"tuple[]"}],"name":"aggregate3","outputs":[{"components":[{"internalType":"bool","name":"success","type":"bool"},{"internalType":"bytes","name":"returnData","type":"bytes"}],"internalType":"struct Multicall3.Result[]","name":"returnData","type":"tuple[]"}],"stateMutability":"payable","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"target","type":"address"},{"internalType":"bool","name":"allowFailure","type":"bool"},{"internalType":"uint256","name":"value","type":"uint256"},{"internalType":"bytes","name":"callData","type":"bytes"}],"internalType":"struct Multicall3.Call3Value[]","name":"calls","type":"tuple[]"}],"name":"aggregate3Value","outputs":[{"components":[{"internalType":"bool","name":"success","type":"bool"},{"internalType":"bytes","name":"returnData","type":"bytes"}],"internalType":"struct Multicall3.Result[]","name":"returnData","type":"tuple[]"}],"stateMutability":"payable","type":"function"},{"inputs":[{"components":[{"internalType":"address","name":"target","type":"address"},{"internalType":"bytes","name":"callData","type":"bytes"}],"internalType":"struct Multicall3.Call[]","name":"calls","type":"tuple[]"}],"name":"blockAndAggregate","outputs":[{"internalType":"uint256","name":"blockNumber","type":"uint256"},{"internalType":"bytes32","name":"blockHash","type":"bytes32"},{"components":[{"internalType":"bool","name":"success","type":"bool"},{"internalType":"bytes","name":"returnData","type":"bytes"}],"internalType":"struct Multicall3.Result[]","name":"returnData","type":"tuple[]"}],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"getBasefee","outputs":[{"internalType":"uint256","name":"basefee","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"blockNumber","type":"uint256"}],"name":"getBlockHash","outputs":[{"internalType":"bytes32","name":"blockHash","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getBlockNumber","outputs":[{"internalType":"uint256","name":"blockNumber","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getChainId","outputs":[{"internalType":"uint256","name":"chainid","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getCurrentBlockCoinbase","outputs":[{"internalType":"address","name":"coinbase","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getCurrentBlockDifficulty","outputs":[{"internalType":"uint256","name":"difficulty","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getCurrentBlockGasLimit","outputs":[{"internalType":"uint256","name":"gaslimit","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getCurrentBlockTimestamp","outputs":[{"internalType":"uint256","name":"timestamp","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"addr","type":"address"}],"name":"getEthBalance","outputs":[{"internalType":"uint256","name":"balance","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getLastBlockHash","outputs":[{"internalType":"bytes32","name":"blockHash","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bool","name":"requireSuccess","type":"bool"},{"components":[{"internalType":"address","name":"target","type":"address"},{"internalType":"bytes","name":"callData","type":"bytes"}],"internalType":"struct Multicall3.Call[]","name":"calls","type":"tuple[]"}],"name":"tryAggregate","outputs":[{"components":[{"internalType":"bool","name":"success","type":"bool"},{"internalType":"bytes","name":"returnData","type":"bytes"}],"internalType":"struct Multicall3.Result[]","name":"returnData","type":"tuple[]"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"bool","name":"requireSuccess","type":"bool"},{"components":[{"internalType":"address","name":"target","type":"address"},{"internalType":"bytes","name":"callData","type":"bytes"}],"internalType":"struct Multicall3.Call[]","name":"calls","type":"tuple[]"}],"name":"tryBlockAndAggregate","outputs":[{"internalType":"uint256","name":"blockNumber","type":"uint256"},{"internalType":"bytes32","name":"blockHash","type":"bytes32"},{"components":[{"internalType":"bool","name":"success","type":"bool"},{"internalType":"bytes","name":"returnData","type":"bytes"}],"internalType":"struct Multicall3.Result[]","name":"returnData","type":"tuple[]"}],"stateMutability":"payable","type":"function"}] }
 
 
-
+function tokenCurrencySymbol() {
+	switch(TOKEN_NAME) {
+		case("ELITE") : { return "≢" }
+		default : { return "" }
+	}
+}
 async function paintStatic() {
 
     document.getElementsByClassName('tablinks')[0].click();
@@ -329,7 +334,7 @@ function paintStaticSuppliesTableHeads(){
 			<div onclick="sortit(3, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 1)">Valuations		<br><span class="c2a90-row-byline">Capitalization</span></div>
 			<div onclick="sortit(4, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 1)">Percentages		<br><span class="c2a90-row-byline">Distribution</span></div>
 		</div>
-		<div id="supplies-loader" style="font-family:italic"><br><br>Counting ≢ across ${CL.length} chains, please wait ...</div>
+		<div id="supplies-loader" style="font-family:italic"><br><br>Counting ${TOKEN_NAME} across ${CL.length} chains, please wait ...</div>
 	`;
 }
 function paintStaticPortfolioTableHeads(){
@@ -342,7 +347,7 @@ function paintStaticPortfolioTableHeads(){
 			<div onclick="sortit(3, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 1)">Valuations		<br><span class="c2a90-row-byline">Capitalization</span></div>
 			<div onclick="sortit(4, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 1)">Percentages		<br><span class="c2a90-row-byline">Distribution</span></div>
 		</div>
-		<div id="portfolio-loader" style="font-family:italic"><br><br>Counting your ≢ balances across ${CL.length} chains, please wait for your wallet connection ...</div>
+		<div id="portfolio-loader" style="font-family:italic"><br><br>Counting your ${TOKEN_NAME} balances across ${CL.length} chains, please wait for your wallet connection ...</div>
 	`;
 
 }
@@ -355,7 +360,7 @@ function paintStaticBridgeTableHeads(){
 			<div onclick="sortit(3, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">Amount of ≢ to Bridge		<br><span class="c2a90-row-byline">Input your amount<span></div>
 			<div onclick="sortit(4, 'supplies-table', 'c2a90-row', 'c2a90-row-item', null, 1, 0)">Actions<br><span class="c2a90-row-byline">Start Transaction</span></div>
 		</div>
-		<div id="bridge-loader" style="font-family:italic"><br><br>Counting your ≢ balances across ${CL.length} chains, please wait for your wallet connection...</div>
+		<div id="bridge-loader" style="font-family:italic"><br><br>Counting your ${TOKEN_NAME} balances across ${CL.length} chains, please wait for your wallet connection...</div>
 	`;
 
     return
@@ -404,7 +409,7 @@ async function dexstats() {
 
 		paintStaticSuppliesTableHeads()
 		try{$("supplies-loader").remove()}catch(e){}
-		$("topstats-totsup").innerHTML = "≢"+fornum6( _totsup , 0)
+		$("topstats-totsup").innerHTML = tokenCurrencySymbol() + fornum6( _totsup , 0)
 		$("topstats-chaincount").innerHTML = CL.length + " Chains";
 		$("topstats-fdv").innerHTML = "$"+fornum6(_price_token * _totsup , 0)
 
@@ -413,7 +418,7 @@ async function dexstats() {
 				<div class="c2a90-row">
 					<div class="c2a90-row-item"><img src="${ CHAINS[CL[i]].chainLogo }"></div>
 					<div class="c2a90-row-item">${ CL[i].replaceAll("-mainnet","")}</div>
-					<div class="c2a90-row-item">≢${ fornum6(_supplies[i] , 0) }</div>
+					<div class="c2a90-row-item">${ tokenCurrencySymbol() }${ fornum6(_supplies[i] , 0) }</div>
 					<div class="c2a90-row-item">$${ fornum6(_supplies[i] * _price_token, 0) } </div>
 					<div class="c2a90-row-item">${ fornum6(_supplies[i]/_totsup * 100 , 2) } %</div>
 				</div>
@@ -425,7 +430,7 @@ async function dexstats() {
 			<div class="c2a90-row c2a90-row-total">
 				<div class="c2a90-row-item"><img src="${ TOKEN_LOGO }"></div>
 				<div class="c2a90-row-item">Total</div>
-				<div class="c2a90-row-item">≢${ fornum6(_totsup, 0) }</div>
+				<div class="c2a90-row-item">${ tokenCurrencySymbol() }${ fornum6(_totsup, 0) }</div>
 				<div class="c2a90-row-item">$${ fornum6(_totsup * _price_token, 0) }</div>
 				<div class="c2a90-row-item">${ fornum6(100, 2) }%</div>
 			</div>
@@ -435,8 +440,15 @@ async function dexstats() {
 	}
 	catch(e) {
 		console.log("ERROR: Supplies Table", e);
-		$("supplies-table").innerHTML += `
-			<div id="supplies-loader" style="font-family:italic"><br><br>An error occured while grabbing all supply data. Will try again shortly to again Count ≢ across ${CL.length} chains, please wait ...</div>
+		$("portfolio-table").innerHTML += `
+			<div id="supplies-loader" style="font-family:italic">
+				<br><br>
+				An error occured while grabbing all supply data.
+				<br><button class="bridge-btn-submit" onclick='notice(${e})'>View Error</button>
+				<br><br>
+				We will try again after 30 secs to again count ${TOKEN_NAME} total supply ${CL.length} chains, please wait ...
+				<br><button class="bridge-btn-submit" onclick='dexstat()'>Re-fetch Supplies Now</button>
+			</div>
 		`;
 	}
 
@@ -479,7 +491,7 @@ async function gubs() {
 				<div class="c2a90-row">
 					<div class="c2a90-row-item"><img src="${ CHAINS[CL[i]].chainLogo }"></div>
 					<div class="c2a90-row-item">${ CL[i].replaceAll("-mainnet","")}</div>
-					<div class="c2a90-row-item">≢${ fornum6(_userbals[i] , 0) }</div>
+					<div class="c2a90-row-item">${ tokenCurrencySymbol() }${ fornum6(_userbals[i] , 0) }</div>
 					<div class="c2a90-row-item">$${ fornum6(_userbals[i] * _price_token, 0) } </div>
 					<div class="c2a90-row-item">${ fornum6(_userbals[i]/_usertot* 100 , 2) } %</div>
 				</div>
@@ -491,7 +503,7 @@ async function gubs() {
 			<div class="c2a90-row c2a90-row-total">
 				<div><br><img src="${ TOKEN_LOGO }"></div>
 				<div><br>Total</div>
-				<div><br>≢${ fornum6(_usertot, 0) }</div>
+				<div><br>${ tokenCurrencySymbol() }${ fornum6(_usertot, 0) }</div>
 				<div><br>$${ fornum6(_usertot * _price_token, 0) }</div>
 				<div><br>${ fornum6(100, 2) }%</div>
 			</div>
@@ -502,7 +514,14 @@ async function gubs() {
 	catch(e) {
 		console.log("ERROR: Portfolio Table", e);
 		$("portfolio-table").innerHTML += `
-			<div id="supplies-loader" style="font-family:italic"><br><br>An error occured while grabbing all portfolio data. Will try again shortly to again Count your ≢ across ${CL.length} chains, please wait ...</div>
+			<div id="supplies-loader" style="font-family:italic">
+				<br><br>
+				An error occured while grabbing all portfolio data.
+				<br><button class="bridge-btn-submit" onclick='notice(${e})'>View Error</button>
+				<br><br>
+				We will try again after 30 secs to again count your ${TOKEN_NAME} balances across ${CL.length} chains, please wait ...
+				<br><button class="bridge-btn-submit" onclick='gubs()'>Re-fetch Balances Now</button>
+			</div>
 		`;
 	}
 
@@ -533,7 +552,7 @@ async function gubs() {
 	$("bridge-curnet-bal").innerHTML = `
 		<img class="curchain-icon" src="${ CHAINS[CL[_curnet.clindex]].chainLogo }"> Connected to ${_curnet.name}.
 		<br>(Switch chains in wallet)
-		<h3>≢${ fornum6(_userbals[_curnet.clindex] ,0) } in Wallet</h3>
+		<h3>${tokenCurrencySymbol()}${ fornum6(_userbals[_curnet.clindex] ,0) } ${TOKEN_NAME} in Wallet</h3>
 	`;
 
 	paintStaticBridgeTableHeads()
@@ -547,7 +566,7 @@ async function gubs() {
 				<div class="c2a90-row-item"><img src="${ CHAINS[CL[i]].chainLogo }"></div>
 				<div class="c2a90-row-item">${ CL[i].replaceAll("-mainnet","") }</div>
 				<div class="c2a90-row-item"><span class="bridge-btn-gascheck" id="bridge-btn-gascheck-${i}" onclick='bridge_gasCheck(${i})'>&#x21bb; Check Gas Cost</span></div>
-				<div class="c2a90-row-item"><input placeholder="≢ to ${CL[i].replaceAll('-mainnet','')}" id="bridge-inp-${i}"/></div>
+				<div class="c2a90-row-item"><input placeholder="amt to ${CL[i].replaceAll('-mainnet','')}" id="bridge-inp-${i}"/></div>
 				<div class="c2a90-row-item"><button class="bridge-btn-submit" onclick='bridge_submit(${i})'>Bridge </button></div>
 			</div>
 		`;
@@ -636,7 +655,7 @@ async function bridge_submit(_toclid) {
 
 	let _oamt = $("bridge-inp-"+_toclid).value;
 
-	if(!isFinite(_oamt) || _oamt<1){notice(`You entered ${_oamt}<br><br>It is an invalid amount!<br><br>Remove decimals & use whole numbers! Minimum amount: ≢1`); return;}
+	if(!isFinite(_oamt) || _oamt<1){notice(`You entered ${_oamt}<br><br>It is an invalid amount!<br><br>Remove decimals & use whole numbers! Minimum amount: 1 ${TOKEN_NAME}`); return;}
 
 	_oamt = BigInt(Math.floor(_oamt)) * (10n**18n)
 
@@ -657,14 +676,14 @@ async function bridge_submit(_toclid) {
 
 	notice(`
 		<h2>Constructing Bridge Request</h2>
-		<h3>≢${ Number(_oamt/(10n**18n)) }</h3>
+		<h3>${ Number(_oamt/(10n**18n)) } ${TOKEN_NAME}</h3>
 		Above amount will be Bridged
 		<br><br>
 		<h3>From <img src="${ CHAINS[CL[_curnet.clindex]].chainLogo }"> ${CL[_curnet.clindex]}</h3>
-		<i>Current Bal: ≢${ _userbals[_curnet.clindex] }</i>
+		<i>Current Bal: ${ _userbals[_curnet.clindex] } ${TOKEN_NAME}</i>
 		<br><br>
 		<h3>To <img src="${ CHAINS[CL[_toclid]].chainLogo }"> ${CL[_toclid]}</h3>
-		<i>Current Bal: ≢${ _userbals[_toclid] }</i>
+		<i>Current Bal: ${ _userbals[_toclid] } ${TOKEN_NAME}</i>
 		<br><br>
 		<h3>Recipient Address</h3>
 		${ window.ethereum.selectedAddress }
@@ -690,13 +709,13 @@ async function bridge_submit(_toclid) {
 		Bridge Fees in ${TOKEN_NAME} paid to ${TOKEN_NAME}'s Team
 		<br><br>
 		<h3>Amount of ${TOKEN_NAME} to Bridge</h3>
-		≢${ Number(_oamt/(10n**18n)) }
+		${ Number(_oamt/(10n**18n)) } ${TOKEN_NAME}
 		<br><br>
 		<h3>From <img src="${ CHAINS[CL[_curnet.clindex]].chainLogo }"> ${CL[_curnet.clindex]}</h3>
-		<i>Current Bal: ≢${ _userbals[_curnet.clindex] }</i>
+		<i>Current Bal: ${ _userbals[_curnet.clindex] }</i> ${TOKEN_NAME}
 		<br><br>
 		<h3>To <img src="${ CHAINS[CL[_toclid]].chainLogo }"> ${CL[_toclid]}</h3>
-		<i>Current Bal: ≢${ _userbals[_toclid] }</i>
+		<i>Current Bal: ${ _userbals[_toclid] }</i> ${TOKEN_NAME}
 		<br><br>
 		<h3>Recipient Address</h3>
 		${ window.ethereum.selectedAddress }
@@ -746,20 +765,21 @@ async function bridge_submit(_toclid) {
 		<h3>${ fornum6(Number(_gasreq[0])/1e18,6) } ${CHAINS[CL[_curnet.clindex]].gasName}</h3>
 		Gas fee paid to LayerZero Decentralized Validator Network
 		<br><br>
-		<h3>≢${ fornum6(Number(_bridgefee)/1e18,2) }</h3>
+		<h3>${ fornum6(Number(_bridgefee)/1e18,2) } ${TOKEN_NAME}</h3>
 		Bridge Fees in ${TOKEN_NAME} paid to ${TOKEN_NAME}'s Team
 		<br><br>
 		<h3>Amount of ${TOKEN_NAME} to Bridge</h3>
-		≢${ Number(_oamt/(10n**18n)) }
+		${ Number(_oamt/(10n**18n)) } ${TOKEN_NAME}
 		<br><br>
 		<h3>From <img src="${ CHAINS[CL[_curnet.clindex]].chainLogo }"> ${CL[_curnet.clindex]}</h3>
-		<i>Current Bal: ≢${ _userbals[_curnet.clindex] }</i>
+		<i>Current Bal: ${ _userbals[_curnet.clindex] }</i> ${TOKEN_NAME}
 		<br><br>
 		<h3>To <img src="${ CHAINS[CL[_toclid]].chainLogo }"> ${CL[_toclid]}</h3>
-		<i>Current Bal: ≢${ _userbals[_toclid] }</i>
+		<i>Current Bal: ${ _userbals[_toclid] }</i> ${TOKEN_NAME}
 		<br><br>
 		<h3>Recipient Address</h3>
 		${ window.ethereum.selectedAddress }
+		<br><br>Please check Portfolio page in a minute!
 	`);
 
 
