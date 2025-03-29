@@ -551,9 +551,9 @@ async function gubs() {
 
 	$("bridge-curnet-bal").innerHTML = `
 		<img class="curchain-icon" src="${ CHAINS[CL[_curnet.clindex]].chainLogo }"> Connected to ${_curnet.name}.
-		<br>(Switch chains in wallet)
+		<br>Please Switch chains from your wallet.
+		<br><br>${TOKEN_NAME} available for Bridging:
 		<h1>${tokenCurrencySymbol()}${ fornum6(_userbals[_curnet.clindex] ,0) }</h1>
-		(${TOKEN_NAME} in ${_curnet.name} Wallet)
 	`;
 
 	paintStaticBridgeTableHeads()
