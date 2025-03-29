@@ -440,7 +440,7 @@ async function dexstats() {
 	}
 	catch(e) {
 		console.log("ERROR: Supplies Table", e);
-		$("portfolio-table").innerHTML += `
+		$("supplies-table").innerHTML += `
 			<div id="supplies-loader" style="font-family:italic">
 				<br><br>
 				An error occured while grabbing all supply data.
