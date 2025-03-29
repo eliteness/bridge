@@ -447,7 +447,7 @@ async function dexstats() {
 				An error occured while grabbing all supply data.
 				<br><button class="bridge-btn-submit" onclick='notice("ERROR: Supplies Table<br>${e.toString()}")'>View Error</button>
 				<br><br>
-				We will try again after 30 secs to again count ${TOKEN_NAME} total supply ${CL.length} chains, please wait ...
+				We will try again after 30 secs to again count ${TOKEN_NAME} total supply across ${CL.length} chains, please wait ...
 				<br><button class="bridge-btn-submit" onclick='dexstats()'>Re-fetch Supplies Now</button>
 			</div>
 		`;
