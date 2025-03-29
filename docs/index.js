@@ -444,8 +444,11 @@ async function dexstats() {
 		$("supplies-table").innerHTML += `
 			<div id="supplies-loader" style="font-family:italic">
 				<br><br>
-				An error occured while grabbing all supply data.
-				<br><button class="bridge-btn-submit" onclick='notice("ERROR: Supplies Table<br>${e.toString()}")'>View Error</button>
+				<details>
+					<summary>An error occured while grabbing all supply data. Click here to see details.</summary>
+					<br>
+					${e.toString()}
+				</details>
 				<br><br>
 				We will try again after 30 secs to again count ${TOKEN_NAME} total supply across ${CL.length} chains, please wait ...
 				<br><button class="bridge-btn-submit" onclick='dexstats()'>Re-fetch Supplies Now</button>
@@ -518,8 +521,11 @@ async function gubs() {
 		$("portfolio-table").innerHTML += `
 			<div id="supplies-loader" style="font-family:italic">
 				<br><br>
-				An error occured while grabbing all portfolio data.
-				<br><button class="bridge-btn-submit" onclick='notice("ERROR: Portfolio Table<br>${e.toString()}")'>View Error</button>
+				<details>
+					<summary>An error occured while grabbing your portfolio data. Click here to see details.</summary>
+					<br>
+					${e.toString()}
+				</details>
 				<br><br>
 				We will try again after 30 secs to again count your ${TOKEN_NAME} balances across ${CL.length} chains, please wait ...
 				<br><button class="bridge-btn-submit" onclick='gubs()'>Re-fetch Balances Now</button>
