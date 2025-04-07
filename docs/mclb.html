@@ -215,25 +215,6 @@
 	const SAFE_ADDR = "0x0000000000000000000000000000000000001234";
     LOGOS = "https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/";
 
-	LZE_id = {
-		'fantom-testnet' : 10112,
-		'bsc-testnet' : 10102,
-
-		"arbitrum-mainnet": 110,
-		"bsc-mainnet": 102,
-		"base-mainnet": 184,
-		"blast-mainnet": 243,
-		"sonic-mainnet": 332,
-		"fantom-mainnet": 112,
-		"avalanche-mainnet": 106,
-  		"polygon-mainnet": 109,
-		"optimism-mainnet": 111,
-		"ethereum-mainnet": 101,
-		"berachain-mainnet": 362,
-		"linea-mainnet": 183,
-		"mantle-mainnet": 181
-	}
-
 	TOKEN_NAME="MCLB";
 	TOKEN_LOGO="https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579.png";
 
@@ -241,53 +222,31 @@
 	TOKEN_PRICE_TVLGURU="0x2696f94f11dfF0d77875E2652FCdB537274B9CE7"
 	TOKEN_PRICE_LP="0xDE87419F0774eef80b0EbD134Ff54ece0d4927C9"
 
-     CHAINS = {
-     	"sonic-mainnet": {
-            url: "https://rpc.soniclabs.com/",
-            chainId: 146,
-            chainLogo: "https://ftm.guru/icons/sonic.png",
-            gasName: "S",
-            explorer: "https://sonicscan.org",
-            lzid: 332,
-        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
-        },
-        "blast-mainnet": {
-            url: "https://rpc.ankr.com/blast",
-            chainId: 81457,
-            chainLogo: "https://ftm.guru/icons/blast.svg",
-            gasName: "ETH",
-            explorer: "https://routescan.io",
-            lzid: 243,
-        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
-        },
-        "bsc-mainnet": {
-            url: "https://binance.llamarpc.com",//"https://rpc.ankr.com/bsc",
-            chainId: 56,
-            chainLogo: "https://ftm.guru/icons/bnb.svg",
-            gasName: "BNB",
-            explorer: "https://bscscan.com",
-            lzid: 102,
-        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
-        },
-		"fantom-mainnet":{
-			url: "https://rpcapi.fantom.network",//"https://rpc.ankr.com/fantom",
-            chainId: 250,
-            chainLogo: "https://ftm.guru/icons/ftm.svg",
-            gasName: "FTM",
-            explorer: "https://ftmscan.com",
-            lzid: 112,
-        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
-		},
-		"base-mainnet":{
-			url: "https://developer-access-mainnet.base.org",
-            chainId: 8453,
-            chainLogo: "https://ftm.guru/icons/base.svg",
-            gasName: "ETH",
-            explorer: "https://basescan.org",
-            lzid: 184,
-        	oft: "0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
-		},
-	}
+    ACTIVE_CHAINS = [
+    	"sonic-mainnet",
+    	"blast-mainnet",
+    	"bsc-mainnet",
+    	"fantom-mainnet",
+    	"base-mainnet",
+    ];
+
+    CHAINS = {};
+	ACTIVE_CHAINS.forEach(key => {
+		if (Object.hasOwn(ALL_CHAINS, key)) {
+			CHAINS[key] = ALL_CHAINS[key];
+		}
+	});
+
+    OFTS = {
+    	"sonic-mainnet":		"0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+    	"blast-mainnet":		"0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+    	"bsc-mainnet":			"0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+    	"fantom-mainnet":		"0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+    	"base-mainnet":			"0x44e23b1f3f4511b3a7e81077fd9f2858df1b7579",
+    };
+
+
+	Object.keys(CHAINS).map(i=>{ CHAINS[i].oft = OFTS[i] })
 
 
     </script>
