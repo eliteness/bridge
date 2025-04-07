@@ -160,6 +160,7 @@
 				<div style="margin:auto;font-family: light_italic;font-size: 0.9em;">
 					Here you can edit the RPC providers used for fetching public data. Sometime some public RPC providers may face downtime during periods of heavy usage. Here you can provide your own curstom RPC URL for such chains. These settings are shared in your browser session cache locally on your device. A hard refresh or closing the browser will reset them back to default.
 				</div>
+				<button class="submit" onclick="CL.map((e,i)=>pingTest(i))">Ping Test all RPCs</button>
                 <br>
                 <br>
         		<div class="c2a90-table" id="settings-table" align="center" style="display:grid;">

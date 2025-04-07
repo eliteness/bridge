@@ -391,7 +391,7 @@ async function dexstats() {
 			<div class="c2a90-row">
 				<div class="c2a90-row-item"><img src="${ CHAINS[CL[i]].chainLogo }"></div>
 				<div class="c2a90-row-item">${ CL[i].replaceAll("-mainnet","") }</div>
-				<div class="c2a90-row-item"><button class="bridge-btn-submit" id="settings-ping-${i}" onclick='pingTest(${i})'>Update </button></div>
+				<div class="c2a90-row-item"><button class="bridge-btn-submit" id="settings-ping-${i}" onclick='pingTest(${i})'>Check </button></div>
 				<div class="c2a90-row-item"><input placeholder="Enter RPC for ${CL[i].replaceAll('-mainnet','')}" id="settings-inp-${i}" value="${CHAINS[CL[i]].url}"/></div>
 				<div class="c2a90-row-item"><button class="bridge-btn-submit" onclick='updateSettings()'>Update </button></div>
 			</div>
@@ -630,12 +630,14 @@ async function bridge_gasCheck(_toclid) {
 }
 
 async function pingTest(_id) {
+	console.log("Ping Test",_id,CL[_id])
 	let _cd = Date.now();
 	try {
 		let _nh = await CHAINS[CL[_id]].pp.getBlockNumber();
-		$("settings-ping-"+i).innerHTML = "⛓ " + _nh;
+		$("settings-ping-"+_id).innerHTML = "🟢⛓ " + _nh;
 	}
 	catch(e) {
+		$("settings-ping-"+_id).innerHTML = "🔴⛓ Offline" ;
 		notice(`
 			<h3>Ping Test Failed!</h3>
 			Chain: ${CL[_id]}<br>
