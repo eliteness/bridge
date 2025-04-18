@@ -101,7 +101,7 @@ ALL_CHAINS = {
 	},
 	"linea-mainnet":{
 		url: "https://1rpc.io/linea",
-        chainId: 59114,
+        chainId: 59144,
         chainLogo: "https://ftm.guru/icons/linea.png",
         gasName: "ETH",
         explorer: "https://lineascan.build",
