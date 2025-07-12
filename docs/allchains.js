@@ -136,7 +136,7 @@ ALL_CHAINS = {
 	"hyperevm-mainnet":{
 		url: "https://rpc.hyperliquid.xyz/evm",
         chainId: 999,
-        chainLogo: "https://ftm.guru/icons/hype.svg",
+        chainLogo: "https://ftm.guru/icons/hype.png",
         gasName: "HYPE",
         explorer: "https://hyperevmscan.io",
         lzid: 367,
