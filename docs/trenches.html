@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Bridge ELITE - Cross-chain Eliteness Network Token Bridge & Analytics</title>
+	<title>Bridge TRENCHES - Cross-chain Eliteness Network Token Bridge & Analytics</title>
 	<meta name="description" content="Turbocharge your DeFi experience by tapping into the Earnings Flywheel with Guru Network DAO! - Eliteness.Network">
 	<meta name="keywords" content="Guru Network, Decentralized Finance, Fantom, ELITE, 1337, defi, farming, FTM1337">
     <link rel="shortcut icon" href="https://ftm.guru/icons/eliteness.png">
@@ -93,14 +93,14 @@
 
         </div>
         <div class="page-heading">
-            <img src="https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x30c8cf6b46aa4df3f9fbc2857aca92f10a6cad7f.png">
-            ELITE token selected
+            <img src="https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x39838b880ba948c49aab7253f61ce1e00c30c014.png">
+            TRENCHES token selected
         </div>
 
         <div class="topstats">
             <div class="topstat">
                 <div id="topstats-totsup"><b>≢</b>... , ...</div>
-                <div>Total Supply of ELITE </div>
+                <div>Total Supply of TRENCHES </div>
             </div>
             <div class="topstat">
                 <div id="topstats-chaincount">? Chains</div>
@@ -126,7 +126,7 @@
         <!-- Tab content -->
         <div id="Supplies" class="tabcontent">
             <div class="c2a c2a90" align="center" style="margin:auto">
-                <h2>ELITE Supply Distribution</h2>
+                <h2>TRENCHES Supply Distribution</h2>
                 <br>
         		<div class="c2a90-table" id="supplies-table" align="center" style="display:grid;">
         			<div style="font-family:italic">Counting ≢ across 10 chains, please wait ...</div>
@@ -137,7 +137,7 @@
         <!-- Tab content -->
         <div id="Portfolio" class="tabcontent">
             <div class="c2a c2a90" align="center" style="margin:auto">
-				<h2>Your ELITE Portfolio</h2>
+				<h2>Your TRENCHES Portfolio</h2>
                 <br>
         		<div class="c2a90-table" id="portfolio-table" align="center" style="display:grid;">
         			<div style="font-family:italic">Loading RPC settings across 10 chains, please wait ...</div>
@@ -148,7 +148,7 @@
         <!-- Tab content -->
         <div id="Bridge" class="tabcontent">
             <div class="c2a c2a90" align="center" style="margin:auto">
-				<h2>Bridge ELITE Across Chains</h2>
+				<h2>Bridge TRENCHES Across Chains</h2>
                 <div id="bridge-curnet-bal"></div>
                 <br><br><br><br>
         		<div class="c2a90-table" id="bridge-table" align="center" style="display:grid;">
@@ -221,27 +221,18 @@
 	const SAFE_ADDR = "0x0000000000000000000000000000000000001234";
     LOGOS = "https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/";
 
+	TOKEN_NAME="TRENCHES";
+	TOKEN_LOGO="https://cdn.jsdelivr.net/gh/unified-defi/equalizer-tokens@latest/sonic/tokens/128x128/0x39838b880ba948c49aab7253f61ce1e00c30c014.png";
 
-	TOKEN_NAME="ELITE";
-	TOKEN_LOGO="https://ftm.guru/icons/eliteness.png";
+	TOKEN_PRICE_CHAIN="sonic-mainnet"
+	TOKEN_PRICE_TVLGURU="0x2696f94f11dfF0d77875E2652FCdB537274B9CE7"
+	TOKEN_PRICE_LP="0x1D64B681315839C83bf545b7a041F4E5111beE39"
 
-	TOKEN_PRICE_CHAIN="fantom-mainnet"
-	TOKEN_PRICE_TVLGURU="0x0786c3a78f5133f08c1c70953b8b10376bc6dcad"
-	TOKEN_PRICE_LP="0xa283455062f635f7f8195e78efee220a111d2a7d"
-
-    ACTIVE_CHAINS = [
+	ACTIVE_CHAINS = [
     	"sonic-mainnet",
-    	"blast-mainnet",
-    	"bsc-mainnet",
-    	"fantom-mainnet",
-    	"arbitrum-mainnet",
-    	"ethereum-mainnet",
-    	"avalanche-mainnet",
     	"base-mainnet",
-    	"polygon-mainnet",
-    	"optimism-mainnet",
-    	"linea-mainnet",
-    	"berachain-mainnet"
+    	"fraxtal-mainnet",
+    	"hyperevm-mainnet"
     ];
 
     CHAINS = {};
@@ -252,25 +243,14 @@
 	});
 
     OFTS = {
-    	"sonic-mainnet":		"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"blast-mainnet":		"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"bsc-mainnet":			"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"fantom-mainnet":		"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"arbitrum-mainnet":		"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"ethereum-mainnet":		"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"avalanche-mainnet":	"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"base-mainnet":			"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"polygon-mainnet":		"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"optimism-mainnet":		"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"linea-mainnet":		"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f",
-    	"berachain-mainnet":	"0x30C8Cf6B46AA4DF3F9fbC2857aca92F10a6cAd7f"
+    	"sonic-mainnet":		"0xF160cb564986f337768474CD37c381a323d3A03D",
+    	"base-mainnet":			"0xF160cb564986f337768474CD37c381a323d3A03D",
+    	"fraxtal-mainnet":		"0xF160cb564986f337768474CD37c381a323d3A03D",
+    	"hyperevm-mainnet":		"0xF160cb564986f337768474CD37c381a323d3A03D"
     };
 
 
 	Object.keys(CHAINS).map(i=>{ CHAINS[i].oft = OFTS[i] })
-
-
-
 
     </script>
 </body>

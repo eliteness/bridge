@@ -14,7 +14,9 @@ LZE_id = {
 	"ethereum-mainnet": 101,
 	"berachain-mainnet": 362,
 	"linea-mainnet": 183,
-	"mantle-mainnet": 181
+	"mantle-mainnet": 181,
+	"fraxtal-mainnet": 255,
+	"hyperevm-mainnet": 367,
 }
 
 ALL_CHAINS = {
@@ -122,5 +124,21 @@ ALL_CHAINS = {
         gasName: "BERA",
         explorer: "https://berascan.com",
         lzid: 362,
+	},
+	"fraxtal-mainnet":{
+		url: "https://rpc.mainnet.frax.com/",
+        chainId: 252,
+        chainLogo: "https://ftm.guru/icons/frax.svg",
+        gasName: "FRAX",
+        explorer: "https://fraxscan.com",
+        lzid: 255,
+	},
+	"hyperevm-mainnet":{
+		url: "https://rpc.hyperliquid.xyz/evm",
+        chainId: 999,
+        chainLogo: "https://ftm.guru/icons/hype.svg",
+        gasName: "HYPE",
+        explorer: "https://hyperevmscan.io",
+        lzid: 367,
 	},
 }
