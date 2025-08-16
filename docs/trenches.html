@@ -228,21 +228,6 @@
 	TOKEN_PRICE_TVLGURU="0x2696f94f11dfF0d77875E2652FCdB537274B9CE7"
 	TOKEN_PRICE_LP="0xda6d6b2f0a9689a92521fc13e281be62ba09d650"
 
-	ACTIVE_CHAINS = [
-    	"sonic-mainnet",
-    	"base-mainnet",
-    	"fraxtal-mainnet",
-    	"hyperevm-mainnet",
-    	"polygon-mainnet"
-    ];
-
-    CHAINS = {};
-	ACTIVE_CHAINS.forEach(key => {
-		if (Object.hasOwn(ALL_CHAINS, key)) {
-			CHAINS[key] = ALL_CHAINS[key];
-		}
-	});
-
     OFTS = {
     	"sonic-mainnet":		"0x116D2ccA3D58305764f2dAF7eBBc819547099278",
     	"base-mainnet":			"0x116D2ccA3D58305764f2dAF7eBBc819547099278",
@@ -252,8 +237,15 @@
     	"avalanche-mainnet":	"0x116D2ccA3D58305764f2dAF7eBBc819547099278",
     };
 
-
+    ACTIVE_CHAINS = Object.keys(OFTS);
+    CHAINS = {};
+	ACTIVE_CHAINS.forEach(key => {
+		if (Object.hasOwn(ALL_CHAINS, key)) {
+			CHAINS[key] = ALL_CHAINS[key];
+		}
+	});
 	Object.keys(CHAINS).map(i=>{ CHAINS[i].oft = OFTS[i] })
+
 
     </script>
 </body>
