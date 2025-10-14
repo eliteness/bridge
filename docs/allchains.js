@@ -17,6 +17,7 @@ LZE_id = {
 	"mantle-mainnet": 181,
 	"fraxtal-mainnet": 255,
 	"hyperevm-mainnet": 367,
+	"plasma-mainnet": 383,
 }
 
 ALL_CHAINS = {
@@ -140,5 +141,13 @@ ALL_CHAINS = {
         gasName: "HYPE",
         explorer: "https://hyperevmscan.io",
         lzid: 367,
+	},
+	"plasma-mainnet":{
+		url: "https://rpc.plasma.to",
+        chainId: 9745,
+        chainLogo: "https://ftm.guru/icons/plasma.svg",
+        gasName: "HYPE",
+        explorer: "https://plasmascan.to/",
+        lzid: 383,
 	},
 }
