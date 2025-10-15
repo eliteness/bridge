@@ -146,7 +146,7 @@ ALL_CHAINS = {
 		url: "https://rpc.plasma.to",
         chainId: 9745,
         chainLogo: "https://ftm.guru/icons/plasma.svg",
-        gasName: "HYPE",
+        gasName: "XPL",
         explorer: "https://plasmascan.to/",
         lzid: 383,
 	},
