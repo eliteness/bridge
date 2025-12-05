@@ -18,9 +18,18 @@ LZE_id = {
 	"fraxtal-mainnet": 255,
 	"hyperevm-mainnet": 367,
 	"plasma-mainnet": 383,
+	"abstract-mainnet": 324,
 }
 
 ALL_CHAINS = {
+    "abstract-mainnet": {
+        url: "https://api.mainnet.abs.xyz",
+        chainId: 2741,
+        chainLogo: "https://ftm.guru/icons/abstract.png",
+        gasName: "ETH",
+        explorer: "https://abscan.org",
+        lzid: 324,
+    },
     "sonic-mainnet": {
         url: "https://rpc.soniclabs.com/",
         chainId: 146,
