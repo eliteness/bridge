@@ -39,7 +39,7 @@ ALL_CHAINS = {
         lzid: 332,
     },
     "blast-mainnet": {
-        url: "https://rpc.ankr.com/blast",
+        url: "https://rpc.blast.io",//"https://rpc.ankr.com/blast",
         chainId: 81457,
         chainLogo: "https://ftm.guru/icons/blast.svg",
         gasName: "ETH",
