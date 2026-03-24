@@ -445,7 +445,7 @@ async function dexstats() {
 			<div id="supplies-loader" style="font-family:italic">
 				<br><br>
 				<details>
-					<summary>An error occured while grabbing all supply data. Click here to see details.</summary>
+					<summary>An error occured while grabbing all supply data. Click here to see details. For Network errors, please update the RPC endpoint from the settings tab. Make sure all RPC endpoints are Connected.</summary>
 					<br>
 					${e.toString()}
 				</details>
@@ -522,7 +522,7 @@ async function gubs() {
 			<div id="supplies-loader" style="font-family:italic">
 				<br><br>
 				<details>
-					<summary>An error occured while grabbing your portfolio data. Click here to see details.</summary>
+					<summary>An error occured while grabbing your portfolio data. Click here to see details. For Network errors, please update the RPC endpoint from the settings tab. Make sure all RPC endpoints are Connected.</summary>
 					<br>
 					${e.toString()}
 				</details>
