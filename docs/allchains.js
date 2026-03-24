@@ -96,7 +96,7 @@ ALL_CHAINS = {
         lzid: 184,
 	},
 	"polygon-mainnet":{
-		url: "https://polygon-rpc.com",//"https://polygon.llamarpc.com",
+		url: "https://1rpc.io/matic",//"https://polygon-rpc.com",//"https://polygon.llamarpc.com",
         chainId: 137,
         chainLogo: "https://ftm.guru/icons/matic.svg",
         gasName: "POL",
